@@ -24,11 +24,22 @@ angular.module('mm.core.login')
 .controller('mmLoginSiteCtrl', function($scope, $state, $mmSitesManager, $mmUtil, $ionicHistory, $mmApp, $ionicModal, $ionicPopup,
         $mmLoginHelper, $q, mmCoreConfigConstants) {
 
+    var vm = this;
+    vm.connect = connect;
+
     $scope.loginData = {
-        siteurl: ''
+        siteurl: 'projetos.uk.aeducvirtual.com.br'
     };
 
-    $scope.connect = function(url) {
+    init();
+
+    function init(){
+      $scope.$on('$ionicView.beforeEnter', function(event, data) {
+        connect($scope.loginData.siteurl);
+      });
+    }
+
+    function connect(url) {
 
         $mmApp.closeKeyboard();
 

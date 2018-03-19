@@ -61,7 +61,8 @@ angular.module('mm.core.login', [])
     .state('mm_login.site', {
         url: '/site',
         templateUrl: 'core/components/login/templates/site.html',
-        controller: 'mmLoginSiteCtrl'
+        controller: 'mmLoginSiteCtrl',
+        controllerAs: 'vm'
     })
 
     .state('mm_login.credentials', {

@@ -12,7 +12,7 @@
         <!-- Form to input the site URL if there are no fixed sites. -->
         <div ng-if="!fixedSites">
           <p class="padding">{{ 'mm.login.newsitedescription' | translate }}</p>
-          <div class="list item item-input">
+          <div class="list item item-input" ng-if="false">
             <input type="url" placeholder="{{ 'mm.login.siteaddress' | translate }}" ng-model="loginData.siteurl" mm-no-input-validation mm-auto-focus >
           </div>
         </div>
@@ -30,11 +30,11 @@
           <!-- Display them using buttons. -->
           <div ng-if="displayAsButtons">
             <p class="padding no-padding-bottom">{{ 'mm.login.selectsite' | translate }}</p>
-            <a ng-repeat="site in fixedSites" class="button button-block" ng-click="connect(site.url)" title="{{site.name}}">{{site.name}}</a>
+            <a ng-repeat="site in fixedSites" class="button button-block" ng-click="vm.connect(site.url)" title="{{site.name}}">{{site.name}}</a>
           </div>
         </div>
 
-        <button ng-if="!fixedSites || !displayAsButtons" class="button button-block button-positive" ng-click="connect(loginData.siteurl)" ng-disabled="!loginData.siteurl">{{ 'mm.login.connect' | translate }}</button>
+        <button ng-if="false" class="button button-block button-positive" ng-click="vm.connect(loginData.siteurl)" ng-disabled="!loginData.siteurl">{{ 'mm.login.connect' | translate }}</button>
       </div>
     </form>
   </ion-content>
