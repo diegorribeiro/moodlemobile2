@@ -29,7 +29,7 @@ $red:             #cb3d4d;
 $red-light:       mix($red, white, 20%);
 $red-dark:        darken($red, 10%);
 
-$orange:          #f98012; // Accent (never text).
+$orange:          #4F5865; // Accent (never text) Original color theme  #f98012.
 $orange-light:    lighten($orange, 10%);
 
 $yellow:          #fbad1a; // Accent (never text).
@@ -50,9 +50,9 @@ $mm-color:          $orange;
 $mm-color-light:    lighten($mm-color, 10%);
 $mm-color-dark:     darken($mm-color, 10%);
 
-$mm-color-init-screen:          #ff5c00;
-$mm-color-init-screen-alt:      #ff7600;
-$mm-init-screen-spinner-color:  $white;
+$mm-color-init-screen:          #f2f2f2;
+$mm-color-init-screen-alt:      #ffffff;
+$mm-init-screen-spinner-color:  $orange;
 $mm-init-screen-logo-width:     60%;
 $mm-init-screen-logo-max-width: 300px;
 
