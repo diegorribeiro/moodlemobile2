@@ -23,6 +23,27 @@ angular.module('mm', ['ionic', 'ngCordova', 'angular-md5', 'pascalprecht.transla
             window.cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
             window.cordova.plugins.Keyboard.disableScroll(true);
         }
+        var push = PushNotification.init({
+            "android": {
+                "senderID": "694767596569",
+                icon: "icon"
+            },
+            "ios": {
+                "alert": "true",
+                "badge": "true",
+                "sound": "true"
+            },
+            "windows": {}
+        });
+        push.on('registration', function (data) {
+            alert(data.registrationId);
+        });
+        push.on('notification', function (data) {
+            alert('Notificação acionada, agora deve-se implementar a navegação no app de acordo com os dados: ' + JSON.stringify(data));
+        });
+        push.on('error', function (e) {
+            alert('registration error: ' + e.message);
+        });
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
